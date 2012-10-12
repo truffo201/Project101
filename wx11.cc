@@ -1,39 +1,32 @@
 #include "wx11.hh"
 
-int             WX11::create(const char *name, t_coord *pos, t_coord *size)
+WX11::WX11(std::string &name, t_coord *pos, t_coord *size, Display *display)
 {
-  /*
-  wpair         ret;
-  t_window      *w;
-
-  if ((w = static_cast<t_window *>(malloc(sizeof(struct s_window) * 1))) == NULL)
-    return 1; // malloc failed
-
   // size of the window
-  w->size.x = size->x;
-  w->size.y = size->y;
+  _size.x = size->x;
+  _size.y = size->y;
 
   // coordinates, parent window is (0,0)
-  w->pos.x = pos->x;
-  w->pos.y = pos->y;
+  _pos.x = pos->x;
+  _pos.y = pos->y;
+
+
+  // save name of the window
+  _name = name;
+
+  // keep entry of display
+  _display = display;
 
   // create the window from X11
-  w->window = XCreateSimpleWindow(_display,
-                                  RootWindow(_display,
-                                             DefaultScreen(_display)),
-                                  w->pos.x, w->pos.y,
-                                  w->size.x, w->size.y,
-                                  2, BlackPixel(_display,
-                                                DefaultScreen(_display)),
-                                  WhitePixel(_display,
-                                             DefaultScreen(_display)));
-
-  // save the window for use
-  ret = _windows.insert(std::pair<const char *, t_window *>(name, w));
-  if (ret.second == false)
-    return 2; // already exist
-  */
-  return 0; // success
+  _window = XCreateSimpleWindow(_display,
+                                RootWindow(_display,
+                                           DefaultScreen(_display)),
+                                _pos.x, _pos.y,
+                                _size.x, _size.y,
+                                2, BlackPixel(_display,
+                                              DefaultScreen(_display)),
+                                WhitePixel(_display,
+                                           DefaultScreen(_display)));
 }
 
 int             WX11::show(const char *name)
@@ -58,17 +51,6 @@ int             WX11::hide(const char *name)
 
 int             WX11::destroy(const char *name)
 {
-  // t_window      *w;
-  // witerator     it;
-
-  // todo: find something much more sexy
-  /*
-  w = _windows[name];
-  it = _windows.find(name);
-  _windows.erase(it);
-  return XDestroyWindow(_display, w->window);
-  */
-  return 0;
 }
 
 int             WX11::setTitle(const char *wname, const char *title)
