@@ -38,6 +38,11 @@ int X11::destroyWindoo(const char *name)
   return 1;
 }
 
+Windoo *X11::getWindoo(const std::string &wname)
+{
+  return _windows["Home"];
+}
+
 int X11::unload()
 {
   // clean all windows from map before shutdown the connection
