@@ -1,13 +1,13 @@
-#ifndef _WINDOW_H_
-#define _WINDOW_H_
+#ifndef _WINDOO_H_
+#define _WINDOO_H_
 
 #include "coord.h"
 
-class Window
+class Windoo
 {
 
   public:
-    virtual int create(const char *wname, t_coord *pos, t_coord *size) = 0;
+    virtual int create(const char *wname, struct s_coord *pos, struct s_coord *size) = 0;
     virtual int show(const char *wname) = 0;
     virtual int hide(const char *wname) = 0;
     virtual int destroy(const char *wname) = 0;
@@ -15,4 +15,4 @@ class Window
 
 };
 
-#endif // _WINDOW_H_
+#endif // _WINDOO_H_
