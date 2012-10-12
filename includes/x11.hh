@@ -1,9 +1,10 @@
 #ifndef _X11_H_
 #define _X11_H_
 
-#include "Graphic.hh"
-#include "coord.h"
 #include <X11/Xlib.h>
+#include "coord.h"
+#include "graphic.hh"
+#include "windoo.hh"
 #include <map>
 
 /*
