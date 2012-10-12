@@ -49,8 +49,9 @@ int             WX11::hide(const char *name)
   return 0;
 }
 
-int             WX11::destroy(const char *name)
+int     WX11::destroy()
 {
+  return XDestroyWindow(_display, _window);
 }
 
 int             WX11::setTitle(const char *wname, const char *title)
