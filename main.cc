@@ -1,4 +1,4 @@
-#include "Graphic.hh"
+#include "graphic.hh"
 #include "x11.hh"
 
 int     main(int argc, char **argv)
@@ -13,7 +13,6 @@ int     main(int argc, char **argv)
     graph->listenEvents();
   graph->unload();
   return 0;
-
   /*
 
   coord.x = 0;
