@@ -16,13 +16,14 @@ class X11 : public Graphic
 {
 
   public:
-    int  load();
-    int  unload();
+    int    load();
+    int    unload();
 
-  int newWindoo(std::string &name, t_coord *pos, t_coord *size);
-    int destroyWindoo(const char *name);
+    int    newWindoo(const std::string &name, t_coord *pos, t_coord *size);
+    int    destroyWindoo(const char *name);
+    Windoo *getWindoo(const std::string &wname);
 
-    void listenEvents();
+    void   listenEvents();
 
   private:
     Display     *_display;

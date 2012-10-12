@@ -14,18 +14,18 @@ int X11::load()
   return 0; // success
 }
 
-int X11::newWindoo(std::string &name, t_coord *pos, t_coord *size)
+int X11::newWindoo(const std::string &name, t_coord *pos, t_coord *size)
 {
-  WX11   *wx11;
   Windoo *w;
   wpair  ret;
 
   // create new Window
   w = static_cast<Windoo *>(new WX11(name, pos, size, _display));
+
   // save the window for use
-  ret = _windows.insert(std::pair<const char *, Windoo *>(name.c_str(), w));
+  ret = _windows.insert(std::pair<const char *, Windoo *>("Home", w));
   if (ret.second == false)
-    return 2; // already exist
+    return 1; // already exist
   return 0; // success
 }
 
