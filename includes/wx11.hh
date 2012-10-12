@@ -1,10 +1,10 @@
 #ifndef _WX11_H_
 #define _WX11_H_
 
-#include "window.hh"
+#include "windoo.hh"
 #include "coord.h"
 
-class WX11 : public Window
+class WX11 : public Windoo
 {
 
   public:
