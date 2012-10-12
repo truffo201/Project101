@@ -1,6 +1,6 @@
 #include "wx11.hh"
 
-WX11::WX11(std::string &name, t_coord *pos, t_coord *size, Display *display)
+WX11::WX11(const std::string &name, t_coord *pos, t_coord *size, Display *display)
 {
   // size of the window
   _size.x = size->x;
@@ -29,24 +29,20 @@ WX11::WX11(std::string &name, t_coord *pos, t_coord *size, Display *display)
                                            DefaultScreen(_display)));
 }
 
-int             WX11::show(const char *name)
+WX11::~WX11()
 {
-  //  t_window      *w;
-
-  // todo: check on errors
-  //w = _windows[name];
-  //return XMapWindow(_display, w->window);
-  return 0;
+  this->hide();
+  this->destroy();
 }
 
-int             WX11::hide(const char *name)
+int     WX11::show()
 {
-  //t_window      *w;
+  return XMapWindow(_display, _window);
+}
 
-  // todo: check on errors
-  //w = _windows[name];
-  //return XUnmapWindow(_display, w->window);
-  return 0;
+int     WX11::hide()
+{
+  return XUnmapWindow(_display, _window);
 }
 
 int     WX11::destroy()

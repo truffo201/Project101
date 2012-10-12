@@ -10,9 +10,10 @@ class WX11 : public Windoo
 {
 
   public:
-        WX11(std::string &wname, t_coord *pos, t_coord *size, Display *display);
-    int show(const char *wname);
-    int hide(const char *wname);
+        WX11(const std::string &wname, t_coord *pos, t_coord *size, Display *display);
+        ~WX11();
+    int show();
+    int hide();
     int destroy();
     int setTitle(const std::string &title);
 
