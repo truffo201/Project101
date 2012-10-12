@@ -54,16 +54,11 @@ int     WX11::destroy()
   return XDestroyWindow(_display, _window);
 }
 
-int             WX11::setTitle(const char *wname, const char *title)
+int     WX11::setTitle(const std::string &title)
 {
-  /*
-  t_window      *w;
-  int           ret;
+  int   ret;
 
-  w = _windows[wname];
   // todo: check return value
-  ret = XStoreName(_display, w->window, title);
+  ret = XStoreName(_display, _window, title.c_str());
   return ret;
-*/
-  return 0;
 }

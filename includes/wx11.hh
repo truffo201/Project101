@@ -13,8 +13,8 @@ class WX11 : public Windoo
         WX11(std::string &wname, t_coord *pos, t_coord *size, Display *display);
     int show(const char *wname);
     int hide(const char *wname);
-    int setTitle(const char *wname, const char *title);
     int destroy();
+    int setTitle(const std::string &title);
 
   private:
     Display     *_display;

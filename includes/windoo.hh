@@ -9,8 +9,8 @@ class Windoo
   public:
     virtual int show(const char *wname) = 0;
     virtual int hide(const char *wname) = 0;
-    virtual int destroy(const char *wname) = 0;
-    virtual int setTitle(const char *wname, const char *title) = 0;
+    virtual int destroy() = 0;
+    virtual int setTitle(const std::string &title) = 0;
 
 };
 
