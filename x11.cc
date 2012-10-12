@@ -28,6 +28,16 @@ int X11::newWindoo(std::string &name, t_coord *pos, t_coord *size)
     return 2; // already exist
   return 0; // success
 }
+
+int X11::destroyWindoo(const char *name)
+{
+  witerator     it;
+
+  it = _windows.find(name);
+  _windows.erase(it);
+  return 1;
+}
+
 int X11::unload()
 {
   // clean all windows from map before shutdown the connection

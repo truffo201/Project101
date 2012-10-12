@@ -20,6 +20,8 @@ class X11 : public Graphic
     int  unload();
 
   int newWindoo(std::string &name, t_coord *pos, t_coord *size);
+    int destroyWindoo(const char *name);
+
     void listenEvents();
 
   private:
