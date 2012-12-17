@@ -7,9 +7,9 @@
 #include "windoo.hh"
 #include <map>
 
-typedef std::map<const char *, Windoo *>::iterator witerator;
-typedef std::pair<std::map<const char *, Windoo *>::iterator, bool> wpair;
-typedef std::map<const char *, Windoo*> wmap;
+typedef std::map<std::string, Windoo *>::iterator witerator;
+typedef std::pair<std::map<std::string, Windoo *>::iterator, bool> wpair;
+typedef std::map<std::string, Windoo*> wmap;
 
 class X11 : public Graphic
 {

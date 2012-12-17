@@ -23,9 +23,10 @@ int X11::newWindoo(const std::string &name, t_coord *pos, t_coord *size)
   w = static_cast<Windoo *>(new WX11(name, pos, size, _display));
 
   // save the window for use
-  ret = _windows.insert(std::pair<const char *, Windoo *>("Home", w));
+  ret = _windows.insert(std::pair<std::string, Windoo *>(std::string(name), w));
   if (ret.second == false)
     return 1; // already exist
+
   return 0; // success
 }
 
