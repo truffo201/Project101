@@ -2,7 +2,6 @@
 #define _WX11_H_
 
 #include <X11/Xlib.h>
-#include <string>
 #include "windoo.hh"
 #include "coord.h"
 
