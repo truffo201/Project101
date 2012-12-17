@@ -1,8 +1,8 @@
 #ifndef _GRAPHIC_H_
 #define _GRAPHIC_H_
 
-#include "coord.h"
 #include <string>
+#include "coord.h"
 
 class Windoo;
 
@@ -14,7 +14,7 @@ class Graphic
     virtual int unload() = 0;
 
     virtual int newWindoo(const std::string &name, t_coord *pos, t_coord *size) = 0;
-    virtual int destroyWindoo(const char *name) = 0;
+    virtual int destroyWindoo(const std::string &wname) = 0;
     virtual Windoo *getWindoo(const std::string &wname) = 0;
 
     virtual void listenEvents() = 0;

@@ -1,12 +1,11 @@
 #ifndef _X11_H_
 #define _X11_H_
 
+#include "graphic.hh"
 #include <X11/Xlib.h>
 #include "coord.h"
-#include "graphic.hh"
 #include "windoo.hh"
 #include <map>
-#include <string>
 
 typedef std::map<const char *, Windoo *>::iterator witerator;
 typedef std::pair<std::map<const char *, Windoo *>::iterator, bool> wpair;
@@ -20,7 +19,7 @@ class X11 : public Graphic
     int    unload();
 
     int    newWindoo(const std::string &name, t_coord *pos, t_coord *size);
-    int    destroyWindoo(const char *name);
+    int    destroyWindoo(const std::string &wname);
     Windoo *getWindoo(const std::string &wname);
 
     void   listenEvents();

@@ -29,7 +29,7 @@ int X11::newWindoo(const std::string &name, t_coord *pos, t_coord *size)
   return 0; // success
 }
 
-int X11::destroyWindoo(const char *name)
+int X11::destroyWindoo(const std::string &name)
 {
   witerator     it;
 
