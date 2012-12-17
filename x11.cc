@@ -41,7 +41,7 @@ int X11::destroyWindoo(const std::string &name)
 
 Windoo *X11::getWindoo(const std::string &wname)
 {
-  return _windows["Home"];
+  return _windows[wname];
 }
 
 int X11::unload()
