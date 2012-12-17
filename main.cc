@@ -5,7 +5,8 @@
 int     main(int argc, char **argv)
 {
   Graphic *graph;
-  Windoo  *w;
+  Windoo  *home;
+  Windoo  *menu;
   X11     *x11;
   t_coord coord;
   t_coord size;
@@ -19,12 +20,16 @@ int     main(int argc, char **argv)
   size.x = 640;
   size.y = 480;
 
-  graph->newWindoo(std::string("Home").c_str(), &coord, &size);
-  w = graph->getWindoo("Home");
+  graph->newWindoo("Home", &coord, &size);
+  graph->newWindoo("Menu", &coord, &size);
+  home = graph->getWindoo("Home");
+  menu = graph->getWindoo("Menu");
 
+  home->setTitle("Welcome !");
+  menu->setTitle("Choose an option:");
   while (42)
   {
-    w->show();
+    home->show();
     graph->listenEvents();
   }
   graph->unload();
